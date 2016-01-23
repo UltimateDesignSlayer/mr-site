@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+	<head>	
+		<!-- Bootstrap Core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Contact CSS -->
+		<link href="css/contact.css" rel="stylesheet">
+		
+		<!-- Custom Fonts -->
+		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+	</head>
+	<body> 
+		@{
+			if (IsPost) { 
+				string companyname = Request["CompanyName"]; 
+				string contactname = Request["ContactName"]; 
+				
+				<p>You entered: <br />
+				Company Name: @companyname <br />
+				Contact Name: @contactname </p>
+			}
+			else
+			{
+				<form method="post" action="">
+					<div class="input-group">
+						<span class="input-group-addon" id="name">Name</span>
+						<input type="text" name="name" class="form-control" placeholder="Name" aria-describedby="name">
+					</div>
+					
+					<div class="input-group">
+						<span class="input-group-addon" id="tel">Phone</span>
+						<input type="text" name="tel" class="form-control" placeholder="Phone Number" aria-describedby="tel">
+					</div>
+					
+					<div class="input-group">
+						<span class="input-group-addon" id="email">Email</span>
+						<input type="text" name="email" class="form-control" placeholder="Email" aria-describedby="email">
+					</div>
+				</form>
+			}
+		}
+		
+	    <!-- jQuery -->
+		<script src="js/jquery.js"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="js/bootstrap.min.js"></script>
+
+	</body> 
+</html>
